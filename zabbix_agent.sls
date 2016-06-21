@@ -8,20 +8,6 @@ Install zabbix_agent:
   pkg.installed:
     - name: zabbix-agent
 
-Install zabbix_proxy:
-  pkg.installed:
-    - name: zabbix-proxy-sqlite3
-
-/etc/zabbix/zabbix_proxy.conf:
-  file.managed:
-    - source: salt://templates/zabbix_proxy.conf.jinja
-    - template: jinja
-    - user: root
-    - group: root
-    - mode: 644
-    - require:
-      - pkg: Install zabbix_proxy
-
 /etc/zabbix/zabbix_agent.conf:
   file.managed:
     - source: salt://templates/zabbix_agent.conf.jinja
