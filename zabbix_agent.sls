@@ -18,12 +18,6 @@ Install zabbix_agent:
     - require:
       - pkg: Install zabbix_agent
 
-zabbix-proxy:
-  service.running:
-    - reload: False
-    - enable: True
-
-
 zabbix-agent:
   service.running:
     - reload: False
